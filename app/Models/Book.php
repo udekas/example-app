@@ -11,6 +11,9 @@ class Book extends Model
 {
     /** @use HasFactory<\Database\Factories\BookFactory> */
     use HasFactory, SoftDeletes;
+
+    protected $guarded = [];
+    
     public function Authors(): BelongsToMany
      {
        return $this->belongsToMany(Author::class, 'book_authors'); 
